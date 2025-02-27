@@ -10,7 +10,7 @@ namespace UseCases.AgencyUseCases.Create
     {
         public async Task<ResponseDTO<PreviewAgancyDTO>> Handle(CreateAgencyCommand request, CancellationToken cancellationToken)
         {
-            var isExist = await repo.SearchAgencyByNameAsync(request.Name);
+            var isExist = await repo.SearchAgencyByNameAsync(request.Name) is not null;
             ResponseDTO<PreviewAgancyDTO> response = new() { IsSuccess = true };
             if (isExist) 
             { 

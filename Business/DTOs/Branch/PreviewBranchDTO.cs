@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Business.DTOs.Agency
+namespace Business.DTOs.Branch
 {
-    public class CreateAgencyDTO : BaseAgencyDTO
+    public class PreviewBranchDTO : BaseBranchDTO
     {
+        public int Id { get; set; }
+
     }
 }

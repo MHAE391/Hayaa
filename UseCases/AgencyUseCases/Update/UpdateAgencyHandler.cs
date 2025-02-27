@@ -23,7 +23,7 @@ namespace UseCases.AgencyUseCases.Update
                 response.Errors = [$"Agency Name is same"];
                 return response;
             }
-            if (await repo.SearchAgencyByNameAsync(request.Name)) 
+            if (await repo.SearchAgencyByNameAsync(request.Name) is not null) 
             {
                 response.IsSuccess = false;
                 response.Errors = [$"Agancy with name '{request.Name}' ,already exist !!"];

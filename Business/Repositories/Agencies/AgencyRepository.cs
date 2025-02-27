@@ -26,7 +26,7 @@ namespace Business.Repositories.Agencies
         public async Task<Agency?> GetAgencyByIdAsync(int id) => await context.Agencies.FirstOrDefaultAsync(x => x.Id == id);
 
         public async Task<IEnumerable<Agency>> GetAllAgenciesAsync() => await context.Agencies.ToListAsync();
-        public async Task<bool> SearchAgencyByNameAsync(string agency) => await context.Agencies.FirstOrDefaultAsync(A => A.Name == agency) is not null;
+        public async Task<Agency?> SearchAgencyByNameAsync(string agency) => await context.Agencies.FirstOrDefaultAsync(A => A.Name == agency);
 
         public async Task<Agency> UpdateAgencyAsync(Agency agency , string name)
         {

@@ -1,4 +1,5 @@
 using Business.Repositories.Agencies;
+using Business.Repositories.Branches;
 using Database;
 using Microsoft.EntityFrameworkCore;
 using UseCases.AgencyUseCases.Create;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(typeof(CreateAgencyCommand).Assembly));
 
 builder.Services.AddScoped<IAgencyRepository , AgencyRepository>();
+builder.Services.AddScoped<IBranchRepository, BranchRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
